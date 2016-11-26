@@ -1,0 +1,10 @@
+<form action='/users/new' method='post'>
+  Name: <input type="text" name="name" placeholder="Name">
+  Email: <input type="email" name="email" placeholder="Email">
+  Password: <input type="password" name="password" placeholder="Password">
+  <input class="password" type="submit" value="submit">
+</form>
+
+<% if @error %>
+  <%= @error %>
+<% end %>
