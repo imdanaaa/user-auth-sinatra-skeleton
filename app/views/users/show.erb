@@ -1,1 +1,6 @@
-<h1> <%= current_user.name.capitalize %>'s Profile </h1>
+<% if current_user %>
+  <p>Welcome back, <%= current_user.name %>!</p>
+
+  <br>
+<% end %>
+<%= erb :'/users/delete' %>

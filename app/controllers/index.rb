@@ -1,10 +1,4 @@
-get '/' do
-  redirect '/homepage'
+get '/' do 
+  erb :index
 end
 
-get '/homepage' do
-  p params
-  p session
-
-  erb :'homepage/index'
-end

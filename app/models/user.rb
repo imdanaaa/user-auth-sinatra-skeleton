@@ -1,23 +1,15 @@
 class User < ActiveRecord::Base
-  include BCrypt
-
-  # All of the BCrypt info methods you need - can be replaced by 'has_secure_password' if the user password field is 'password_digest'
 
   def password
-    @password ||= BCrypt::Password.new(password_hash)
+    @password ||= BCrypt::Password.new(hashed_password)
   end
 
   def password=(new_password)
     @password = BCrypt::Password.create(new_password)
-    self.password_hash = @password
+    self.hashed_password = @password
   end
 
-  def self.authenticate(email, password)
-    @user = User.find_by(email: email)
-    if @user && @user.password == password
-      @user
-    else
-      nil
-    end
+  def authenticate(plain_password)
+    self.password == plain_password
   end
 end

@@ -1,10 +1,22 @@
-<form action='/users/new' method='post'>
-  Name: <input type="text" name="name" placeholder="Name">
-  Email: <input type="email" name="email" placeholder="Email">
-  Password: <input type="password" name="password" placeholder="Password">
-  <input class="password" type="submit" value="submit">
-</form>
+<h1>Register as a new user</h1>
 
-<% if @error %>
-  <%= @error %>
-<% end %>
+<br>
+<form action="/users" method="post">
+  <label>Name: </label>
+    <input type="text" name="user[name]">
+  <label>Email: </label>
+    <input type="email" name="user[email]">
+  <label>Password: </label>
+    <input type="password" name="user[password]" placeholder="password">
+    <br>
+  <label>Confirm password:</label>
+    <input type="password" name="password_confirm" placeholder="confirm password">
+    <br>
+    <input type="submit" name="Click to register">
+</form>
+<br>
+<h2>
+  <% if @error %>
+    <%= @error %>
+  <% end %>
+</h2>

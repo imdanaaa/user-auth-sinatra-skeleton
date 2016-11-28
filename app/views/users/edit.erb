@@ -1,0 +1,19 @@
+<h1>Update your account information</h1>
+
+<br>
+<form action="/users/<%= current_user.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT">
+  <label>Name: </label>
+    <input type="text" name="user[name]" placeholder="<%= current_user.name %>">
+  <label>Email: </label>
+    <input type="email" name="user[email]" placeholder="<%= current_user.email %>">
+    <br>
+    <input type="submit" name="Click to update">
+</form>
+<br>
+<h2>
+  <% if @error %>
+    <%= @error %>
+  <% end %>
+</h2>
+<%= erb :'/users/delete' %>

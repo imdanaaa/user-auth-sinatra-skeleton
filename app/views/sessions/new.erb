@@ -1,9 +1,12 @@
-<form action='/sessions/new' method='post'>
-  Email: <input type="email" name="email" placeholder="email">
-  Password: <input type="password" name="password" placeholder="password"></div>
-  <input class="password" type="submit" value="submit">
+<br>
+<form action="/sessions" method="post">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <input type="submit" value="submit">
 </form>
-
-<% if @error %>
-  <%= @error %>
-<% end %>
+<br>
+<h2>
+  <% if @error %>
+    <%= @error %>
+  <% end %>
+</h2>

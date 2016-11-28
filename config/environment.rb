@@ -20,6 +20,11 @@ require "sinatra/reloader" if development?
 require 'bcrypt'
 require 'erb'
 
+if $0 == 'irb'
+  require 'hirb'
+  Hirb.enable
+end
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 

@@ -1,0 +1,8 @@
+<br>
+<br>
+<h2>Click below to delete your account</h2>
+<br>
+<form action="/users/<%= @user.id %>" method="POST">
+  <input type="hidden" value="delete" name="_method">
+  <input type="submit" name="submit" value="Delete">
+</form>
